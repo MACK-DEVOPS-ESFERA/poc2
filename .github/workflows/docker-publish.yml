@@ -6,6 +6,10 @@ name: Docker
 # documentation.
 
 on:
+  workflow_run:
+    workflows: [CodeQL]
+    types:
+      - completed
   schedule:
     - cron: '25 14 * * *'
   push:
