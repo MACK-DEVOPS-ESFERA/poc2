@@ -23,6 +23,7 @@ env:
 jobs:
 
   PyLint:
+    name: Lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -42,7 +43,7 @@ jobs:
         pylint $(git ls-files '*.py')
 
   SAST:
-    name: Analyze
+    name: SAST
     needs: PyLint
     # Runner size impacts CodeQL analysis time. To learn more, please see:
     #   - https://gh.io/recommended-hardware-resources-for-running-codeql
