@@ -104,6 +104,7 @@ jobs:
         category: "/language:${{matrix.language}}"
         
   Docker-Build:
+    name: Docker Build
     needs: [PyLint, SAST]
     runs-on: ubuntu-latest
     permissions:
